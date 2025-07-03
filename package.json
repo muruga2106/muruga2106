@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "chai": "^5.2.0",
+    "chai-as-promised": "^8.0.1",
+    "mocha": "^11.7.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
