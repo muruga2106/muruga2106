@@ -24,7 +24,7 @@ function addforpromisify(a, b, callback){
     }, 10);
 }
 
-add(5,4, multiplyByTen);
+// add(5,4, multiplyByTen);
 
 // //using callback (callback hell)
 // const myFun  = (a, b, multFun) => {
@@ -63,10 +63,10 @@ newAdd(1,4).then((sum)=>{
 const myfun = async () => {
     const sum = await newAdd(4,2);
     const mul = await newMul(sum);
-    console.log(mul)
+    return mul;
 }
 
-myfun();
+// myfun().then((res)=>{console.log(res)});
 
 
 // based on promisify
@@ -76,3 +76,7 @@ const AddPromisify = util.promisify(addforpromisify);
 AddPromisify(2,1).then((result)=>{
     multiplyByTen(result);
 })
+
+module.exports.newAdd = newAdd;
+module.exports.newMul = newMul;
+module.exports.myfun = myfun;
